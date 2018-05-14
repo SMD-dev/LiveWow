@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/slider.css" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
 </head>
@@ -67,69 +68,74 @@
 			<div id="features">
 				<div class="container">
 					<h3>What We're About</h3>
-					<div class="row">
-						<div class="3u 12u(mobile)">
+					<div class="slideshow-container">
+						<div class="mySlides fade">
 
 							<!-- Feature #1 -->
-							<section>
-								<a href="#" class="bordered-feature-image">
-									<img src="images/services.webp" alt="" />
-								</a>
-								<h2>Services</h2>
-								<p>
-									This is where
-									<strong>Services</strong> are detailed, you can bold text or even
-									<a href="http://google.com">possibly a link</a> for another page.
-								</p>
-							</section>
+							<a href="services.html" class="bordered-feature-image">
+								<img src="images/services.webp" alt="Services page link" />
+							</a>
+							<h2 class="text-top">Services</h2>
+							<p class="text">
+								This is where
+								<strong>Services</strong> are detailed, you can bold text or even
+								<a href="http://google.com">possibly a link</a> for another page.
+							</p>
 
 						</div>
-						<div class="3u 12u(mobile)">
+						<div class="mySlides fade">
 
 							<!-- Feature #2 -->
 							<section>
-								<a href="#" class="bordered-feature-image">
-									<img src="images/products.jpg" alt="" />
+								<a href="product.html" class="bordered-feature-image">
+									<img src="images/products.jpg" alt="Products page link" />
 								</a>
-								<h2>Products</h2>
-								<p>
+								<h2 class="text-top">Products</h2>
+								<p class="text">
 									Description of products here with a link possibly in the text. These descriptions can be as long or as short as you want
 									them to be.
 								</p>
 							</section>
 
 						</div>
-						<div class="3u 12u(mobile)">
+						<div class="mySlides fade">
 
 							<!-- Feature #3 -->
 							<section>
-								<a href="#" class="bordered-feature-image">
-									<img src="images/nutrition.jpg" alt="" />
+								<a href="nutrition.html" class="bordered-feature-image">
+									<img src="images/nutrition.jpg" alt="Nutrition page link" />
 								</a>
-								<h2>Nutrition</h2>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et luctus orci. Pellentesque habitant morbi tristique senectus
-									et netus et malesuada fames ac turpis egestas. Sed egestas, odio eu tristique commodo, odio velit tristique sapien,
-									fringilla consequat lacus est eu ex. Quisque condimentum dignissim dolor vel pellentesque.
+								<h2 class="text-top">Nutrition</h2>
+								<p class="text">
+									Nutrition is very important.
 								</p>
 							</section>
 
 						</div>
-						<div class="3u 12u(mobile)">
+						<div class="mySlides fade">
 
 							<!-- Feature #4 -->
 							<section>
-								<a href="#" class="bordered-feature-image">
-									<img src="images/family.webp" alt="" />
+								<a href="family.html" class="bordered-feature-image">
+									<img src="images/family.webp" alt="Family page link" />
 								</a>
-								<h2>Family</h2>
-								<p>
+								<h2 class="text-top">Family</h2>
+								<p class="text">
 									Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu varius nibh. Suspendisse vitae magna eget odio
 									amet mollis.
 								</p>
 							</section>
 
 						</div>
+
+						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					</div>
+					<div style="text-align:center">
+						<span class="dot" onclick="currentSlide(1)"></span>
+						<span class="dot" onclick="currentSlide(2)"></span>
+						<span class="dot" onclick="currentSlide(3)"></span>
+						<span class="dot" onclick="currentSlide(4)"></span>
 					</div>
 				</div>
 			</div>
@@ -368,8 +374,8 @@
 
 		<!-- Copyright -->
 		<div id="copyright">
-			&copy; Untitled. All rights reserved. | Design:
-			<a href="http://superiormarketingdesign.com">Superior Marketing Design</a>
+			&copy; LiveWow. All rights reserved. | Design:
+			<a href="https://superiormarketingdesign.com">Superior Marketing & Design</a>
 		</div>
 
 	</div>
@@ -381,6 +387,7 @@
 	<script src="assets/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/slider.js"></script>
 
 
 </body>

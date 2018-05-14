@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
 
-/*
-	Halcyonic by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 /*************************************************************
 * Extras added in
 *************************************************************/
@@ -30,7 +24,7 @@
 	}
 
 	#features-wrapper2 {
-		background: #c3c3ff url("background3.jpg");
+		background: #c3c3ff url("images/background3.jpg");
 		border-bottom: solid 1px #ffffff;
 		padding: 45px 0 45px 0;
 		text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
