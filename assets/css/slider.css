@@ -59,7 +59,7 @@ img {
   font-size: 48px;
   padding: 8px 12px;
   position: absolute;
-  top: 40;
+  top: 40px;
   width: 100%;
   text-align: center;
 }
@@ -127,7 +127,7 @@ img {
 
 @media screen and (min-width: 737px) {
   .text-top {
-    font-size: 48 !important;
+    font-size: 48px !important;
     color: #fff;
     margin: 0 0 0.25em 0;
   }
@@ -144,11 +144,11 @@ img {
     text-align: center;
   }
   .text-top {
-    font-size: 48 !important;
+    font-size: 48px !important;
     color: #f2f2f2;
     padding: 8px 12px;
     position: absolute;
-    top: 40;
+    top: 40px;
     width: 100%;
     text-align: center;
   }
