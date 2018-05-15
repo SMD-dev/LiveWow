@@ -100,12 +100,37 @@
                                     <h2>Talk To Us</h2>
                                     <h3>Move mountains by calling today to get a free consultation with a Live W.O.W. specialist.</h3>
                                 </header>
-                                <form>
-                                    <input type="text" class="5u 12u(mobile)" name="name" placeholder="Name" />
-                                    <input type="text" class="5u 12u(mobile)" name="email" placeholder="Email" />
-                                    <input type="text" class="11u 12u(mobile)" name="subject" placeholder="Subject" />
-                                    <textarea class="12u 12u(mobile)" name="message" placeholder="Help me get started on..."></textarea>
-                                </form>
+                                <div class="content">
+                                    <form action="https://formspree.io/support@livewow.today" method="POST">
+                                        <div class="row">
+                                            <div class="6u 12u(mobile)">
+                                                <input type="text" class="12u form-input" name="name" placeholder="Name" />
+                                            </div>
+                                            <div class="6u 12u(mobile)">
+                                                <input type="text" class="12u form-input" name="email" placeholder="Email" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="12u">
+                                                <input type="text" class="12u form-input" name="subject" placeholder="Subject" />
+                                            </div>
+                                        </div>
+                                        <div class="row 50%">
+                                            <div class="12u">
+                                                <textarea name="message" class="12u" placeholder="Help me start on..." rows="7"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="12u">
+                                                <ul class="">
+                                                    <li>
+                                                        <input type="submit" class="button-big" id="submit" value="Send Message" />
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </section>
 
                         </div>
