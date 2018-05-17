@@ -6,6 +6,9 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="assets/css/slider.css" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -66,74 +69,100 @@
 		<div id="features">
 			<div class="container">
 				<h3>What We're About</h3>
-				<div class="slideshow-container">
-					<div class="mySlides fade">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:auto; height:25em !important;">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+					</ol>
 
-						<!-- Feature #1 -->
-						<a href="services.html" class="bordered-feature-image">
-							<img src="images/services.webp" alt="Services page link" />
-						</a>
-						<h2 class="text-top">Services</h2>
-						<p class="text">
-							We offer awesome
-							<strong>Services</strong> to help you find the
-							<a href="http://google.com">help</a> that you need.
-						</p>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox" style="width: 75%; height:25em !important; margin: 0 auto">
+						<div class="item active">
+
+							<!-- Feature #1 -->
+							<section>
+								<a href="services.html" class="bordered-feature-image">
+									<img src="images/services.webp" alt="Services page link" />
+								</a>
+								<div class="carousel-caption">
+									<h2>Services</h2>
+									<p>
+										We offer awesome
+										<strong>Services</strong> to help you find the
+										<a href="http://google.com">help</a> that you need.
+									</p>
+								</div>
+							</section>
+
+						</div>
+						<div class="item">
+
+							<!-- Feature #2 -->
+							<section>
+								<a href="products.html" class="bordered-feature-image">
+									<img src="images/products.jpg" alt="Products page link" />
+								</a>
+								<div class="carousel-caption">
+									<h2>Services</h2>
+									<p>
+										We offer awesome
+										<strong>Services</strong> to help you find the
+										<a href="http://google.com">help</a> that you need.
+									</p>
+								</div>
+							</section>
+
+						</div>
+						<div class="item">
+
+							<!-- Feature #3 -->
+							<section>
+								<a href="nutrition.html" class="bordered-feature-image">
+									<img src="images/nutrition.jpg" alt="Nutrition page link" />
+								</a>
+								<div class="carousel-caption">
+									<h2>Services</h2>
+									<p>
+										We offer awesome
+										<strong>Services</strong> to help you find the
+										<a href="http://google.com">help</a> that you need.
+									</p>
+								</div>
+							</section>
+
+						</div>
+						<div class="item">
+
+							<!-- Feature #4 -->
+							<section>
+								<a href="family.html" class="bordered-feature-image">
+									<img src="images/family.webp" alt="Family page link" />
+								</a>
+								<div class="carousel-caption">
+									<h2>Services</h2>
+									<p>
+										We offer awesome
+										<strong>Services</strong> to help you find the
+										<a href="http://google.com">help</a> that you need.
+									</p>
+								</div>
+							</section>
+
+						</div>
 
 					</div>
-					<div class="mySlides fade">
-
-						<!-- Feature #2 -->
-						<section>
-							<a href="products.html" class="bordered-feature-image">
-								<img src="images/products.jpg" alt="Products page link" />
-							</a>
-							<h2 class="text-top">Products</h2>
-							<p class="text">
-								Description of products here with a link possibly in the text. These descriptions can be as long or as short as you want
-								them to be.
-							</p>
-						</section>
-
-					</div>
-					<div class="mySlides fade">
-
-						<!-- Feature #3 -->
-						<section>
-							<a href="nutrition.html" class="bordered-feature-image">
-								<img src="images/nutrition.jpg" alt="Nutrition page link" />
-							</a>
-							<h2 class="text-top">Nutrition</h2>
-							<p class="text">
-								Nutrition is very important.
-							</p>
-						</section>
-
-					</div>
-					<div class="mySlides fade">
-
-						<!-- Feature #4 -->
-						<section>
-							<a href="family.html" class="bordered-feature-image">
-								<img src="images/family.webp" alt="Family page link" />
-							</a>
-							<h2 class="text-top">Family</h2>
-							<p class="text">
-								Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu varius nibh. Suspendisse vitae magna eget odio
-								amet mollis.
-							</p>
-						</section>
-
-					</div>
-
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
-				</div>
-				<div style="text-align:center">
-					<span class="dot" onclick="currentSlide(1)"></span>
-					<span class="dot" onclick="currentSlide(2)"></span>
-					<span class="dot" onclick="currentSlide(3)"></span>
-					<span class="dot" onclick="currentSlide(4)"></span>
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
 			</div>
 		</div>
