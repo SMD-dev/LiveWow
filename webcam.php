@@ -50,9 +50,18 @@
                             <section>
                                 <header>
                                     <h2>WEBCAM TEST</h2>
+                                    <h3>Not working?</h3>
+                                    <form action="wcRedirect.php" method="get">
+                                    	put room name here: <input type="text" name="name"><br>
+                                    </form>
                                     <iframe allow="camera; microphone" src=" https://appr.tc/ " style="height: 35em; width: 35em ">
                                         <p>Your browser does not support iframes.</p>
+
                                     </iframe>
+                                    <?php
+                                    	$html_select = file_get_contents("https://appr.tc/");
+                                    	echo $html_select;
+                                    ?>
                                 </header>
                             </section>
 
