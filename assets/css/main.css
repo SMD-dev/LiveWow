@@ -33,7 +33,7 @@ input[type="submit"] {
 }
 
 #features-wrapper2 {
-  background: #c3c3ff url("images/background3.jpg");
+  background: #f7f7f7 url("images/bg04.png");
   border-bottom: solid 1px #ffffff;
   padding: 45px 0 45px 0;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
@@ -62,7 +62,7 @@ input[type="submit"] {
 
 .bordered-feature-image2 {
   display: block;
-  background: #000000;
+  background: #cecece url("./images/bg04.png");
   padding: 10px;
   box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.65);
   margin: 0 0 1.5em 0;

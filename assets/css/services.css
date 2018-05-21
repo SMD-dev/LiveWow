@@ -1,0 +1,14 @@
+/* Services */
+.services-tabs {
+  opacity: 1;
+}
+
+.services-tabs:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.active {
+  background: white;
+  padding: 20px;
+}
