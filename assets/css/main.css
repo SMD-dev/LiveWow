@@ -1582,8 +1582,9 @@ section > :last-child,
   /* Header */
 
   #header {
-    min-height: 155px;
+    min-height: 150px;
     position: relative;
+    margin: 0 25px;
   }
 
   #header h1 {
@@ -2163,7 +2164,31 @@ section > :last-child,
 
 /* Custom arbitrary classes */
 
+.logo {
+  padding-top: 5px;
+  height: auto;
+  width: 10em;
+  position: absolute;
+}
+
 .footer-text {
   font-weight: 500;
   text-decoration: none;
+}
+
+.glow {
+  -webkit-animation: glow 3s infinite;
+  animation: glow 3s infinite;
+}
+
+@keyframes glow {
+  0% {
+    color: #d0d0d0;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: #d0d0d0;
+  }
 }
