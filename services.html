@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Three Column - Halcyonic by HTML5 UP</title>
+    <title>LiveWOW</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -46,48 +46,48 @@
         <div id="features-wrapper2" style="background: default">
             <div id="features2">
                 <div class="container">
-                    <h3>Featured Products</h3>
+                    <h3>Featured Services</h3>
                     <div class="row">
-                        <div class="3u" id="tab1">
+                        <div class="3u">
 
                             <!-- Feature #1 -->
-                            <section class="active">
-                                <a href="#" class="bordered-feature-image2" onclick="changediv(1)">
+                            <section id="t1" class="tablink active">
+                                <button class="bordered-feature-image3" onclick="showDivs(event, 'tab1', 't1')">
                                     <img src="images/spencer1.JPG" alt="Fitness" class="services-tabs" />
-                                </a>
+                                </button>
                                 <h2 style="text-align: center">Fitness</h2>
                             </section>
 
                         </div>
-                        <div class="3u" id="tab2">
+                        <div class="3u">
 
                             <!-- Feature #2 -->
-                            <section>
-                                <a href="#" class="bordered-feature-image2" onclick="changediv(2)">
-                                    <img src="images/nutrition.jpg" alt="Nutrition" class="services-tabs" />
-                                </a>
+                            <section id="t2" class="tablink">
+                                <button class="bordered-feature-image3" onclick="showDivs(event, 'tab2', 't2')">
+                                    <img src="images/MEALS.jpg" alt="Nutrition" class="services-tabs" />
+                                </button>
                                 <h2 style="text-align: center">Dietician</h2>
                             </section>
 
                         </div>
-                        <div class="3u" id="tab3">
+                        <div class="3u">
 
                             <!-- Feature #3 -->
-                            <section>
-                                <a href="#" class="bordered-feature-image2" onclick="changediv(3)">
+                            <section id="t3" class="tablink">
+                                <button class="bordered-feature-image3" onclick="showDivs(event, 'tab3', 't3')">
                                     <img src="images/us.JPG" alt="Family and Marriage" class="services-tabs" />
-                                </a>
+                                </button>
                                 <h2 style="text-align: center">Family and Marriage</h2>
                             </section>
 
                         </div>
-                        <div class="3u" id="tab4">
+                        <div class="3u">
 
                             <!-- Feature #4 -->
-                            <section>
-                                <a href="#" class="bordered-feature-image2" onclick="changediv(4)">
+                            <section id="t4" class="tablink">
+                                <button class="bordered-feature-image3" onclick="showDivs(event, 'tab4', 't4')">
                                     <img src="images/spencer4.JPG" alt="Addiction Recovery" class="services-tabs" />
-                                </a>
+                                </button>
                                 <h2 style="text-align: center">Addiction Recovery</h2>
                             </section>
 
@@ -97,16 +97,70 @@
             </div>
 
             <!-- Content -->
-            <div id="content-wrapper" style="background: white">
+            <div id="content-wrapper" style="background: grey; border:none;">
                 <div id="content">
                     <div class="container">
                         <div class="row">
-                            <div class="12u">
+                            <div class="12u tabcontent" id="tab1">
 
                                 <!-- Main Content -->
                                 <section>
                                     <header>
                                         <h2>One Column</h2>
+                                        <h3>A generic one column layout</h3>
+                                    </header>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam metus, congue vel suscipit ut, dignissim non risus. Vestibulum
+                                        ante est, fringilla nec placerat eu, vestibulum vitae diam. Integer eget egestas
+                                        eros. Duis enim erat, mollis quis lacinia eget, blandit nec ipsum. Donec vitae turpis
+                                        ipsum. Aliquam mauris libero, sagittis in eleifend at, mattis imperdiet velit. Donec
+                                        urna risus, rutrum molestie varius ac, lacinia sit amet augue. Nam ultrices elementum
+                                        eros.
+                                    </p>
+                                    <p>
+                                        Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum hendrerit congue nec eu risus. Cum sociis
+                                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem
+                                        ipsum dolor sit amet, consectetur adipiscing egestas tempus. Cras convallis odio
+                                        sit amet risus convallis porttitor. Integer vehicula fermentum ligula at pretium.
+                                        Suspendisse semper iaculis eros, eu aliquam justo imperdiet vel. Proin nec dictum
+                                        mi. Duis commodo enim non tellus interdum elit. Suspendisse fermentum adipiscing
+                                        nisi, a tempor libero malesuada at. Morbi lacinia dui adipiscing risus eleifend tincidunt.
+                                        Proin eu mauris eu tellus eleifend hendrerit.
+                                    </p>
+                                    <p>
+                                        Mauris sit amet tellus urna. In facilisis, tortor vitae ultricies egestas, odio mi rhoncus arcu, quis euismod felis felis
+                                        et velit. Mauris varius consectetur erat egestas tempus. Cras convallis odio sit
+                                        amet risus convallis porttitor. Integer vehicula fermentum ligula at pretium. Suspendisse
+                                        semper iaculis eros, eu aliquam justo imperdiet vel. Proin nec dictum mi. Duis commodo
+                                        enim non tellus interdum iaculis. Phasellus ultrices diam sit amet orci lacinia sed
+                                        consequat dui auctor.
+                                    </p>
+                                    <p>
+                                        Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum hendrerit congue nec eu risus. Cum sociis
+                                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem
+                                        ipsum dolor sit amet, consectetur adipiscing egestas tempus. Cras convallis odio
+                                        sit amet risus convallis porttitor. Integer vehicula fermentum ligula at pretium.
+                                        Suspendisse semper iaculis eros, eu aliquam justo imperdiet vel. Proin nec dictum
+                                        mi. Duis commodo enim non tellus interdum elit. Suspendisse fermentum adipiscing
+                                        nisi, a tempor libero malesuada at. Morbi lacinia dui adipiscing risus eleifend tincidunt.
+                                        Proin eu mauris eu tellus eleifend hendrerit.
+                                    </p>
+                                    <p>
+                                        Mauris sit amet tellus urna. In facilisis, tortor vitae ultricies egestas, odio mi rhoncus arcu, quis euismod felis felis
+                                        et velit. Mauris varius consectetur erat egestas tempus. Cras convallis odio sit
+                                        amet risus convallis porttitor. Integer vehicula fermentum ligula at pretium. Suspendisse
+                                        semper iaculis eros, eu aliquam justo imperdiet vel. Proin nec dictum mi. Duis commodo
+                                        enim non tellus interdum iaculis. Phasellus ultrices diam sit amet orci lacinia sed
+                                        consequat dui auctor.
+                                    </p>
+                                </section>
+
+                            </div>
+						<div class="12u tabcontent" id="tab2">
+                                <!-- Main Content -->
+                                <section>
+                                    <header>
+                                        <h2>TAB 2</h2>
                                         <h3>A generic one column layout</h3>
                                     </header>
                                     <p>
@@ -273,6 +327,7 @@
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/services.js"></script>
 
 </body>
 
