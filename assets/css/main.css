@@ -230,6 +230,7 @@ body {
 
 /* Containers */
 
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -1478,6 +1479,8 @@ section > :last-child,
     inset 0px 0px 0px 2px rgba(255, 96, 96, 0.85),
     3px 3px 3px 1px rgba(0, 0, 0, 0.15);
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-animation: button-big 3s infinite;
+  animation: button-big 3s infinite;
 }
 
 .button-big:hover {
@@ -1490,6 +1493,8 @@ section > :last-child,
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5),
     inset 0px 0px 0px 2px rgba(255, 96, 96, 0.85),
     3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+  -webkit-animation: button-big-hover 0.4s;
+  animation: button-big-hover 0.4s;
 }
 
 .button-big:active {
@@ -2191,4 +2196,20 @@ section > :last-child,
   100% {
     color: #d0d0d0;
   }
+}
+
+@keyframes button-big {
+  0% { color:#FFFFFF; }
+  50% { color: #5d7cad; }
+  100% { color: #FFFFFF; }
+}
+
+@keyframes button-big-hover {
+  0% { opacity: 1.0;
+        background-color: #ed391b;
+ }
+  50% { opacity: 0.8;   background-color: #ed391b;
+ }
+  100% { opacity: 1.0;   background-color: #ed391b;
+ }
 }
