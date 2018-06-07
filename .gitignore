@@ -1,0 +1,10 @@
+.DS_Store
+
+# Elastic Beanstalk CLI Files
+.elasticbeanstalk/*
+
+# Node Modules
+node_modules/*
+
+# .json files to be safe
+*.json

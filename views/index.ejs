@@ -2,16 +2,10 @@
 <html>
 
 <head>
-	<title>LiveWOW</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/slider.css" />
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<% include ./partials/header.ejs %>
 </head>
 
 <body>
@@ -23,22 +17,10 @@
 				<div class="row">
 					<div class="12u">
 
-						<!-- Logo -->
-						<a href="index.html" id="logo">
-							<img src="images/liveWOWlogo.png" class="logo" />
-						</a>
-
-						<!-- Nav -->
-						<nav id="nav">
-							<a href="index.html">Home</a>
-							<a href="services.html">Services</a>
-							<a href="products.html">Store</a>
-							<a href="careers.html">Careers</a>
-							<a href="about.html">About Us</a>
-							<a href="about.html#contact" class="glow">Contact</a>
-						</nav>
+						<% include ./partials/nav.ejs %>
 
 					</div>
+
 				</div>
 			</header>
 			<div id="banner">
@@ -49,8 +31,10 @@
 							<a href="webcam2.html" class="button-big">Help Me Start!</a>
 
 						</div>
-						<div class="6u 12u(mobile)"> <iframe width="560" height="315" src="https://www.youtube.com/embed/24fdcMw0Bj0?start=05&amp;autoplay=1&mute=1&modestbranding=1&autohide=2&theme=dark&showinfo=0&controls=0"
-						 frameborder="0" allow="autoplay; encrypted-media"></iframe></div>
+						<div class="6u 12u(mobile)">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/24fdcMw0Bj0?start=05&amp;autoplay=1&mute=1&modestbranding=1&autohide=2&theme=dark&showinfo=0&controls=0"
+							 frameborder="0" allow="autoplay; encrypted-media"></iframe>
+						</div>
 
 						<!-- Banner Video -->
 					</div>
@@ -359,13 +343,8 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/skel-viewport.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/slider.js"></script>
+	<% include ./partials/js.ejs %>
+		<script src="assets/js/slider.js"></script>
 
 
 </body>
