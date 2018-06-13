@@ -57,6 +57,12 @@ if (cluster.isMaster) {
   app.get("/contact", function(req, res) {
     res.render("about.ejs#contact");
   });
+  app.get("/login", function(req, res) {
+    res.render("login");
+  });
+  app.get("/profile", function(req, res) {
+    res.render("profile");
+  });
 
   app.post("/signup", function(req, res) {
     var item = {

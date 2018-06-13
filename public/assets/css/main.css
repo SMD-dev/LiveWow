@@ -2196,7 +2196,7 @@ section > :last-child,
   height: auto;
   width: 10em;
   position: absolute;
-  left: 10%;
+  left: 0;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 737px) {
