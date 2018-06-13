@@ -42,6 +42,21 @@ if (cluster.isMaster) {
   app.get("/", function(req, res) {
     res.render("index");
   });
+  app.get("/services", function(req, res) {
+    res.render("services");
+  });
+  app.get("/store", function(req, res) {
+    res.render("store");
+  });
+  app.get("/careers", function(req, res) {
+    res.render("careers");
+  });
+  app.get("/about", function(req, res) {
+    res.render("about");
+  });
+  app.get("/contact", function(req, res) {
+    res.render("about.ejs#contact");
+  });
 
   app.post("/signup", function(req, res) {
     var item = {
@@ -79,7 +94,7 @@ if (cluster.isMaster) {
                 req.body.previewAccess +
                 "\r\nTheme: " +
                 req.body.theme,
-              Subject: "New user sign up!!!",
+              Subject: "New user sign up!",
               TopicArn: snsTopic
             },
             function(err, data) {
