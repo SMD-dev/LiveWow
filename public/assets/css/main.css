@@ -188,6 +188,12 @@ section {
   display: block;
 }
 
+body::after {
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content:url(../../images/spencer1.jpg) url(../../images/spencer2.jpg) url(../../images/spencer3.jpg) url(../../images/elijah1.jpg)
+            url(../../images/elijah2.jpg) url(../../images/elijah5.jpg);
+}
+
 body {
   line-height: 1;
 }
