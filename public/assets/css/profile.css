@@ -62,6 +62,10 @@
   opacity: 1;
 }
 
+table, th, td {
+  border: 1px solid black;
+}
+
 /* .cover-pic {
   position: absolute;
   opacity: 0;
