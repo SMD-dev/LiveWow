@@ -67,6 +67,10 @@ if (cluster.isMaster) {
     res.render("profile");
   });
 
+  app.post("/login", function(req, res) {
+    res.render("profile");
+  });
+
   app.post("/signup", function(req, res) {
     var item = {
       email: { S: req.body.email },
