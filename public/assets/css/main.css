@@ -37,7 +37,7 @@ input[type="submit"] {
   background: #f7f7f7 url("images/bg04.png");
   border-bottom: solid 1px #ffffff;
   padding: 45px 0 45px 0;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
+  /* text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75); */
 }
 
 /* Features */
@@ -2288,12 +2288,24 @@ section > :last-child,
 }
 
 @keyframes fading-images-one {
-  33% {
+  25% {
     background: url("../../images/spencer2.jpg") no-repeat;
     background-size: cover;
   }
-  66% {
+  35% {
+    background: url("../../images/spencer2.jpg") no-repeat;
+    background-size: cover;
+  }
+  55% {
     background: url("../../images/spencer3.jpg") no-repeat;
+    background-size: cover;
+  }
+  65% {
+    background: url("../../images/spencer3.jpg") no-repeat;
+    background-size: cover;
+  }
+  85% {
+    background: url("../../images/spencer1.jpg") no-repeat;
     background-size: cover;
   }
   100% {
@@ -2303,12 +2315,24 @@ section > :last-child,
 }
 
 @keyframes fading-images-two {
-  33% {
+  25% {
     background: url("../../images/elijah2.jpg") no-repeat;
     background-size: cover;
   }
-  66% {
+  35% {
+    background: url("../../images/elijah2.jpg") no-repeat;
+    background-size: cover;
+  }
+  55% {
     background: url("../../images/elijah5.jpg") no-repeat;
+    background-size: cover;
+  }
+  65% {
+    background: url("../../images/elijah5.jpg") no-repeat;
+    background-size: cover;
+  }
+  85% {
+    background: url("../../images/elijah1.jpg") no-repeat;
     background-size: cover;
   }
   100% {
@@ -2318,12 +2342,24 @@ section > :last-child,
 }
 
 @keyframes fading-images-three {
-  33% {
+  25% {
     background: url("../../images/spencer1.jpg") no-repeat;
     background-size: cover;
   }
-  66% {
+  35% {
+    background: url("../../images/spencer1.jpg") no-repeat;
+    background-size: cover;
+  }
+  55% {
     background: url("../../images/spencer2.jpg") no-repeat;
+    background-size: cover;
+  }
+  65% {
+    background: url("../../images/spencer2.jpg") no-repeat;
+    background-size: cover;
+  }
+  85% {
+    background: url("../../images/spencer3.jpg") no-repeat;
     background-size: cover;
   }
   100% {
@@ -2339,6 +2375,8 @@ b {
 .mission {
   font-weight: 400;
   font-size: 36px;
+  line-height: 1.25;
+  letter-spacing: 1px;
 }
 
 .header-moto {
@@ -2364,4 +2402,26 @@ b {
   text-align: center;
   width: 100%;
   color: #c6c8c8;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.what-we-do {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  padding: 50px;
+  background: #fff;
+  font-size: 24px;
 }
