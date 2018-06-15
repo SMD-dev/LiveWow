@@ -1441,29 +1441,28 @@ section > :last-child,
   border-radius: 10px;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px white,
-    3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+    3px 3px 3px 1px rgba(0, 0, 0, 0.6);
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
 }
 
 .button:hover {
-  background-image: url("./images/background3.jpg");
-  /* background-image: -webkit-linear-gradient(top, #ed391b, #ce1a00);
-	background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
-	background-image: linear-gradient(top, #ed391b, #ce1a00); */
+  cursor: pointer;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px white,
-    3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+    5px 6px 6px 3px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
 }
 
 .button:active {
-  /* background-image: -moz-linear-gradient(top, #ce1a00, #ed391b); */
-  background-image: url("./images/background3.jpg");
-  /* background-image: -webkit-linear-gradient(top, #ed391b, #ce1a00);
-  background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
-  background-image: linear-gradient(top, #ed391b, #ce1a00); */
+  transform: translateY(-1px);
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px white,
-    3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+    4px 6px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button::after {
+  transition: all 0.4s;
 }
 
 .button-big {
@@ -2413,6 +2412,7 @@ b {
 
   font-size: 48px;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .what-we-do {
@@ -2424,4 +2424,9 @@ b {
   padding: 50px;
   background: #fff;
   font-size: 24px;
+}
+
+.join-us {
+  font-size: 36px;
+    margin-top: 25px;
 }

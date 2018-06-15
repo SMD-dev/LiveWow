@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <% include ./partials/header.ejs %>
+        <link rel="stylesheet" href="./assets/css/profile.css" />
+</head>
+
+<body class="subpage">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+                <div class="row">
+                    <div class="12u">
+
+                        <% include ./partials/nav.ejs %>
+
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- Content -->
+        <div id="content-wrapper">
+            <div id="content">
+                <div class="container">
+                    <h4>Gaurdians</h4>
+                    <div class="row">
+                        <div class="4u 12u(mobile)">
+
+                            <!-- Sidebar -->
+                            <section>
+                                <header class="profile-pic-container">
+                                    <img src="images/elijah1.jpg" width="100%" height="100%" class="profile-pic" />
+                                    <h1 class="profile-pic-text">Change Picture</h1>
+                                    <!-- <img src="images/pic06.jpg" width="100%" height="100%" class="cover-pic" /> -->
+                                </header>
+                            </section>
+
+                        </div>
+                        <div class="8u 12u(mobile) important(mobile)">
+
+                            <!-- Main Content -->
+                            <section>
+                                <header>
+                                    <h2>Name - Dietician</h2>
+                                    <h3 class="rating">
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                        <span>☆</span>
+                                    </h3>
+                                    <p>
+                                        <strong>Background</strong>
+                                    </p>
+                                </header>
+                                <p>
+                                    <strong>Education/Certification</strong>
+                                </p>
+                                <p>
+                                    <strong>Industry Experience</strong>
+                                </p>
+                                <p>
+                                    <strong>Specialization</strong>
+                                </p>
+                                <a href="#" class="button">Schedule Appointment</a>
+
+
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include ./partials/footer.ejs %>
+
+    </div>
+
+    <% include ./partials/js.ejs %>
+
+</body>
+
+</html>
