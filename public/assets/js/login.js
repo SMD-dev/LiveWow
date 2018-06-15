@@ -26,7 +26,7 @@ function login(params) {
   $.post("/login", params, function(result) {
     if (result && result.success) {
       $("#status").text("Successfully logged in.");
-      window.location = "./goodturn";
+      window.location = "/profile";
     } else {
       $("#status").html(
         "<strong style='color:red'>Incorrect username/password</strong>"

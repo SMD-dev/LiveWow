@@ -2282,18 +2282,18 @@ section > :last-child,
 }
 
 #banner > .row > div .three {
-  background: url("../../images/spencer3.JPG") no-repeat;
+  background: url("../../images/spencer3.jpg") no-repeat;
   background-size: cover;
   animation: fading-images-three 21s infinite 4s;
 }
 
 @keyframes fading-images-one {
   33% {
-    background: url("../../images/spencer2.JPG") no-repeat;
+    background: url("../../images/spencer2.jpg") no-repeat;
     background-size: cover;
   }
   66% {
-    background: url("../../images/spencer3.JPG") no-repeat;
+    background: url("../../images/spencer3.jpg") no-repeat;
     background-size: cover;
   }
   100% {
@@ -2319,11 +2319,11 @@ section > :last-child,
 
 @keyframes fading-images-three {
   33% {
-    background: url("../../images/spencer1.JPG") no-repeat;
+    background: url("../../images/spencer1.jpg") no-repeat;
     background-size: cover;
   }
   66% {
-    background: url("../../images/spencer2.JPG") no-repeat;
+    background: url("../../images/spencer2.jpg") no-repeat;
     background-size: cover;
   }
   100% {
