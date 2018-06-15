@@ -33,13 +33,13 @@
                             <!-- Main Content -->
                             <section id="login">
                                 <div class="content">
-                                    <form action="/login" method="POST">
+                                    <form onsubmit="validateForm()">
                                         <div class="row">
                                             <div class="6u 12u(mobile)">
-                                                <input type="text" class="12u form-input" name="email" placeholder="Email" required />
+                                                <input type="email" class="12u form-input" id="email" name="email" placeholder="Email" required />
                                             </div>
                                             <div class="6u 12u(mobile)">
-                                                <input type="password" class="12u form-input" name="password" placeholder="Password" required />
+                                                <input type="password" class="12u form-input" id="password" name="password" placeholder="Password" required />
                                             </div>
                                         </div>
                                         <div class="row">
@@ -51,6 +51,7 @@
                                                 </ul>
                                             </div>
                                         </div>
+                                        <div id="status"></div>
                                     </form>
                                 </div>
                                 <header>
@@ -67,6 +68,7 @@
         </div>
 
         <% include ./partials/footer.ejs %>
+            <script src="./assets/js/login.js"></script>
 
     </div>
 
