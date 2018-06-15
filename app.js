@@ -30,7 +30,7 @@ if (cluster.isMaster) {
   var sns = new AWS.SNS();
   var ddb = new AWS.DynamoDB();
 
-  var ddbTable = process.env.STARTUP_SIGNUP_TABLE;
+  var ddbTable = "user";
   var snsTopic = process.env.NEW_SIGNUP_TOPIC;
   var app = express();
 
@@ -44,6 +44,12 @@ if (cluster.isMaster) {
   });
   app.get("/services", function(req, res) {
     res.render("services");
+  });
+  app.get("/gaurdians", function(req, res) {
+    res.render("gaurdians");
+  });
+  app.get("/wow", function(req, res) {
+    res.render("wow");
   });
   app.get("/store", function(req, res) {
     res.render("store");
@@ -68,15 +74,36 @@ if (cluster.isMaster) {
   });
 
   app.post("/login", function(req, res) {
-    res.render("profile");
+    ddb.getItem(
+      {
+        AttributesToGet: ["password"],
+        TableName: "user",
+        Key: {
+          email: {
+            S: req.body.email
+          }
+        }
+      },
+      function(err, data) {
+        if (err) {
+          var returnStatus = 500;
+
+          console.log("return status " + returnStatus);
+          console.log("DDB Error: " + err);
+          res.json({ success: false }).end();
+        } else {
+          console.log("data ", JSON.stringify(data));
+          res.json({ success: true }).end();
+        }
+      }
+    );
   });
 
   app.post("/signup", function(req, res) {
     var item = {
       email: { S: req.body.email },
-      name: { S: req.body.name },
-      preview: { S: req.body.previewAccess },
-      theme: { S: req.body.theme }
+      password: { S: req.body.password },
+      ConditionExpression: "attribute_not_exists(email)"
     };
 
     ddb.putItem(
@@ -86,40 +113,40 @@ if (cluster.isMaster) {
         Expected: { email: { Exists: false } }
       },
       function(err, data) {
-        if (err) {
+        if (err && err.code !== "ConditionalCheckFailedException") {
           var returnStatus = 500;
 
-          if (err.code === "ConditionalCheckFailedException") {
-            returnStatus = 409;
-          }
-
-          res.status(returnStatus).end();
+          console.log("return status " + returnStatus);
           console.log("DDB Error: " + err);
+          res.json({ success: false }).end();
         } else {
-          sns.publish(
-            {
-              Message:
-                "Name: " +
-                req.body.name +
-                "\r\nEmail: " +
-                req.body.email +
-                "\r\nPreviewAccess: " +
-                req.body.previewAccess +
-                "\r\nTheme: " +
-                req.body.theme,
-              Subject: "New user sign up!",
-              TopicArn: snsTopic
-            },
-            function(err, data) {
-              if (err) {
-                res.status(500).end();
-                console.log("SNS Error: " + err);
-              } else {
-                res.status(201).end();
-              }
-            }
-          );
+          // sns.publish(
+          //   {
+          //     Message:
+          //       "Name: " + req.body.name + "\r\nEmail: " + req.body.email,
+          //     Subject: "New user sign up!",
+          //     TopicArn: snsTopic
+          //   },
+          //   function(err, data) {
+          //     if (err) {
+          //       res.status(500).end();
+          //       console.log("SNS Error: " + err);
+          //     } else {
+          //       console.log("201 status");
+          //       res.status(201).end();
+          //     }
+          //   }
+          // );
+          returnStatus = 201;
+          console.log("201 baby");
         }
+
+        if (err.code === "ConditionalCheckFailedException") {
+          console.log("Conditional check failed.  409");
+        }
+
+        res.status(returnStatus);
+        res.json({ success: true }).end();
       }
     );
   });

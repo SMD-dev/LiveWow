@@ -45,15 +45,6 @@
 									Owner of LiveWOW
 								</p>
 							</section>
-							<section>
-								<header>
-									<img src="images/testimonial3.jpg" width="100%" height="100%" />
-								</header>
-								<p>"Put testimonial here" -person 3
-								</p>
-							</section>
-
-
 
 						</div>
 						<div class="8u 12u(mobile) important(mobile)">
@@ -61,22 +52,45 @@
 							<!-- Main Content -->
 							<section>
 								<header>
-									<h2>Join Us!</h2>
-									<h3>Join an awesome team of people.</h3>
+									<h2>Join an awesome team of people!</h2>
+									<h3>Please enter your name, email, birthday, and password.</h3>
 								</header>
-								<p>
-									We connect you with people who are more than just fitness trainers.
-								</p>
-								<p>
-									Sed faucibus viverra ligula, non varius magna semper vitae. Donec eu justo ut ipsum hendrerit congue nec eu risus. Cum sociis
-									natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur
-									adipiscing egestas tempus. Cras convallis odio sit amet risus convallis porttitor. Integer vehicula fermentum ligula
-									at pretium. Suspendisse semper iaculis eros, eu aliquam justo imperdiet vel. Proin nec dictum mi. Duis commodo enim
-									non tellus interdum elit. Suspendisse fermentum adipiscing nisi, a tempor libero malesuada at. Morbi lacinia dui
-									adipiscing risus eleifend tincidunt. Proin eu mauris eu tellus eleifend hendrerit.
-								</p>
-								<a href="#" class="button-big">Start your fitness today!</a>
-
+								<form id="signupForm" onsubmit="validateForm()">
+									<div class="row">
+										<div class="6u 12u(mobile)">
+											<input type="text" class="12u form-input" id="first-name" name="first-name" placeholder="First Name" required />
+										</div>
+										<div class="6u 12u(mobile)">
+											<input type="text" class="12u form-input" id="last-name" name="last-name" placeholder="Last Name" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="6u 12u(mobile)">
+											<input type="email" class="12u form-input" id="email" name="email" placeholder="Email" required />
+										</div>
+										<div class="6u 12u(mobile)">
+											<input type="date" class="12u form-input" id="date" name="date" placeholder="Birthday" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="6u 12u(mobile)">
+											<input type="password" class="12u form-input" id="password1" name="password1" placeholder="Password" required />
+										</div>
+										<div class="6u 12u(mobile)">
+											<input type="password" class="12u form-input" id="password2" name="password2" placeholder="Password again" required />
+										</div>
+									</div>
+									<div class="row">
+										<div class="12u">
+											<ul class="">
+												<li>
+													<input type="submit" class="button" id="submit" value="Create Account" />
+												</li>
+											</ul>
+										</div>
+									</div>
+									<span id="status"></span>
+								</form>
 
 							</section>
 
@@ -88,15 +102,10 @@
 
 		<% include ./partials/footer.ejs %>
 
-			<!-- Copyright -->
-			<div id="copyright">
-				&copy; LiveWow. All rights reserved. | Design:
-				<a href="https://superiormarketingdesign.com">Superior Marketing & Design</a>
-			</div>
-
 	</div>
 
 	<% include ./partials/js.ejs %>
+		<script src="./assets/js/signup.js"></script>
 
 </body>
 
