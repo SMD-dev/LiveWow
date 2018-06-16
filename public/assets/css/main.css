@@ -26,10 +26,11 @@ input[type="submit"] {
 }
 
 #features2 h3 {
-  font-size: 3.25em;
+  font-size: 2.75em;
   color: #000;
   margin: 0 0 1em 0;
   text-align: center;
+  /* line-height: initial; */
 }
 
 #features-wrapper2 {
@@ -37,7 +38,15 @@ input[type="submit"] {
   background: #f7f7f7 url("images/bg04.png");
   border-bottom: solid 1px #ffffff;
   padding: 45px 0 45px 0;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
+  /* text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75); */
+}
+
+#features-wrapper3 {
+  height: 90vh;
+  background: #353d4046 url("images/bg04.png");
+  border-bottom: solid 1px #ffffff;
+  padding: 45px 0 45px 0;
+  /* text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75); */
 }
 
 /* Features */
@@ -188,6 +197,20 @@ section {
   display: block;
 }
 
+<<<<<<< HEAD
+=======
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(../../images/spencer1.jpg) url(../../images/spencer2.jpg)
+    url(../../images/spencer3.jpg) url(../../images/elijah1.jpg)
+    url(../../images/elijah2.jpg) url(../../images/elijah5.jpg);
+}
+
+>>>>>>> c5a90afe128ff3454d0e33dfedf3fa5f74616995
 body {
   line-height: 1;
 }
@@ -1435,29 +1458,28 @@ section > :last-child,
   border-radius: 10px;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px white,
-    3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+    3px 3px 3px 1px rgba(0, 0, 0, 0.6);
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
 }
 
 .button:hover {
-  background-image: url("./images/background3.jpg");
-  /* background-image: -webkit-linear-gradient(top, #ed391b, #ce1a00);
-	background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
-	background-image: linear-gradient(top, #ed391b, #ce1a00); */
+  cursor: pointer;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px white,
-    3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+    5px 6px 6px 3px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
 }
 
 .button:active {
-  /* background-image: -moz-linear-gradient(top, #ce1a00, #ed391b); */
-  background-image: url("./images/background3.jpg");
-  /* background-image: -webkit-linear-gradient(top, #ed391b, #ce1a00);
-  background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
-  background-image: linear-gradient(top, #ed391b, #ce1a00); */
+  transform: translateY(-1px);
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
     inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px white,
-    3px 3px 3px 1px rgba(0, 0, 0, 0.15);
+    4px 6px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button::after {
+  transition: all 0.4s;
 }
 
 .button-big {
@@ -2254,85 +2276,8 @@ section > :last-child,
   }
 }
 
-#banner > .row > div {
-  padding-left: 0;
-}
-
-#banner > .row > div .fading-images {
-  width: 100%;
-  height: 90vh;
-}
-
-#banner > .row > div .one {
-  background: url("../../images/spencer1.jpg") no-repeat;
-  background-size: cover;
-  animation: fading-images-one 21s infinite;
-}
-
-#banner > .row > div .two {
-  background: url("../../images/elijah1.jpg") no-repeat;
-  background-size: cover;
-  animation: fading-images-two 21s infinite 2s;
-}
-
-#banner > .row > div .three {
-  background: url("../../images/spencer3.JPG") no-repeat;
-  background-size: cover;
-  animation: fading-images-three 21s infinite 4s;
-}
-
-@keyframes fading-images-one {
-  33% {
-    background: url("../../images/spencer2.JPG") no-repeat;
-    background-size: cover;
-  }
-  66% {
-    background: url("../../images/spencer3.JPG") no-repeat;
-    background-size: cover;
-  }
-  100% {
-    background: url("../../images/spencer1.jpg") no-repeat;
-    background-size: cover;
-  }
-}
-
-@keyframes fading-images-two {
-  33% {
-    background: url("../../images/elijah2.jpg") no-repeat;
-    background-size: cover;
-  }
-  66% {
-    background: url("../../images/elijah5.jpg") no-repeat;
-    background-size: cover;
-  }
-  100% {
-    background: url("../../images/elijah1.jpg") no-repeat;
-    background-size: cover;
-  }
-}
-
-@keyframes fading-images-three {
-  33% {
-    background: url("../../images/spencer1.JPG") no-repeat;
-    background-size: cover;
-  }
-  66% {
-    background: url("../../images/spencer2.JPG") no-repeat;
-    background-size: cover;
-  }
-  100% {
-    background: url("../../images/spencer3.jpg") no-repeat;
-    background-size: cover;
-  }
-}
-
 b {
   font-weight: 600;
-}
-
-.mission {
-  font-weight: 400;
-  font-size: 36px;
 }
 
 .header-moto {
