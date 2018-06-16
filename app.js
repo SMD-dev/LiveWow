@@ -45,8 +45,8 @@ if (cluster.isMaster) {
   app.get("/services", function(req, res) {
     res.render("services");
   });
-  app.get("/gaurdians", function(req, res) {
-    res.render("gaurdians");
+  app.get("/guardians", function(req, res) {
+    res.render("guardians");
   });
   app.get("/wow", function(req, res) {
     res.render("wow");
