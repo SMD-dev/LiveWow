@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <% include ./partials/header.ejs %>
+</head>
+
+<body class="subpage">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header">
+                <div class="row">
+                    <div class="12u">
+
+                        <% include ./partials/nav.ejs %>
+
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Content -->
+        <div id="content-wrapper">
+            <div id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="12u">
+
+                            <!-- Main Content -->
+                            <h2>Webcam chat with your trainer!</h2>
+                            <p>iframes Not working? <a style="color: red;" href="https://appr.tc/">Click here.</a></p>
+                            <section style="height: 95vh;">
+                                    <!--<form action="wcRedirect.php" method="get">
+                                    	put room name here: <input type="text" name="name"><br>
+                                    </form>-->
+                                    <iframe allow="camera; microphone" src=" https://appr.tc/ " style="height: 100%; width: 100% ">
+                                        <p>Your browser does not support iframes.</p>
+
+                                    </iframe>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ <% include ./partials/footer.ejs %>
+            <script src="./assets/js/login.js"></script>
+
+    </div>
+
+    <% include ./partials/js.ejs %>
+
+</body>
+
+</html>

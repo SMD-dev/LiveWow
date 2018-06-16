@@ -72,6 +72,9 @@ if (cluster.isMaster) {
   app.get("/profile", function(req, res) {
     res.render("profile");
   });
+  app.get("/webcam", function(req, res) {
+    res.render("webcam");
+  });
 
   app.post("/login", function(req, res) {
     ddb.getItem(
