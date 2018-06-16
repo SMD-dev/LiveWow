@@ -197,20 +197,6 @@ section {
   display: block;
 }
 
-<<<<<<< HEAD
-=======
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  content: url(../../images/spencer1.jpg) url(../../images/spencer2.jpg)
-    url(../../images/spencer3.jpg) url(../../images/elijah1.jpg)
-    url(../../images/elijah2.jpg) url(../../images/elijah5.jpg);
-}
-
->>>>>>> c5a90afe128ff3454d0e33dfedf3fa5f74616995
 body {
   line-height: 1;
 }
