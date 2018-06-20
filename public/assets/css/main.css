@@ -1439,7 +1439,7 @@ section > :last-child,
   text-decoration: none;
   font-size: 1.75em;
   font-weight: 300;
-  padding: 15px 45px 15px 45px;
+  padding: 10px 35px;
   outline: 0;
   border-radius: 10px;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75),
@@ -1796,7 +1796,7 @@ section > :last-child,
 
   .button {
     font-size: 1.5em;
-    padding: 10px 35px 10px 35px;
+    padding: 5px 25px;
   }
 
   /* Banner */
@@ -1878,7 +1878,7 @@ section > :last-child,
 
   .button {
     font-size: 1.5em;
-    padding: 10px 35px 10px 35px;
+    padding: 5px 25px;
   }
 
   /* Wrappers */

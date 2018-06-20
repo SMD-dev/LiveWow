@@ -24,14 +24,14 @@ if (cluster.isMaster) {
   var express = require("express");
   var bodyParser = require("body-parser");
   var path = require("path");
+  var session = require("express-session");
+  var createhandler = require("./createhandler.js");
+  var loginHandler = require("./loginHandler.js");
 
   AWS.config.region = process.env.REGION;
 
-  var sns = new AWS.SNS();
   var ddb = new AWS.DynamoDB();
 
-  var ddbTable = "user";
-  var snsTopic = process.env.NEW_SIGNUP_TOPIC;
   var app = express();
 
   app.set("view engine", "ejs");
@@ -45,8 +45,8 @@ if (cluster.isMaster) {
   app.get("/services", function(req, res) {
     res.render("services");
   });
-  app.get("/gaurdians", function(req, res) {
-    res.render("gaurdians");
+  app.get("/guardians", function(req, res) {
+    res.render("guardians");
   });
   app.get("/wow", function(req, res) {
     res.render("wow");
@@ -77,81 +77,32 @@ if (cluster.isMaster) {
   });
 
   app.post("/login", function(req, res) {
-    ddb.getItem(
-      {
-        AttributesToGet: ["password"],
-        TableName: "user",
-        Key: {
-          email: {
-            S: req.body.email
-          }
-        }
-      },
-      function(err, data) {
-        if (err) {
-          var returnStatus = 500;
+    loginHandler(req, ddb).then(result => {
+      email = request.session.email;
+      online = request.session.online;
 
-          console.log("return status " + returnStatus);
-          console.log("DDB Error: " + err);
-          res.json({ success: false }).end();
-        } else {
-          console.log("data ", JSON.stringify(data));
-          res.json({ success: true }).end();
-        }
+      if (online) {
+        response.json({ success: "true" });
+        console.log("success");
+      } else {
+        response.json("error");
+        console.log("error");
       }
-    );
+    });
   });
 
   app.post("/signup", function(req, res) {
-    var item = {
-      email: { S: req.body.email },
-      password: { S: req.body.password },
-      ConditionExpression: "attribute_not_exists(email)"
-    };
+    createhandler(request).then(result => {
+      email = request.session.email;
 
-    ddb.putItem(
-      {
-        TableName: ddbTable,
-        Item: item,
-        Expected: { email: { Exists: false } }
-      },
-      function(err, data) {
-        if (err && err.code !== "ConditionalCheckFailedException") {
-          var returnStatus = 500;
-
-          console.log("return status " + returnStatus);
-          console.log("DDB Error: " + err);
-          res.json({ success: false }).end();
-        } else {
-          // sns.publish(
-          //   {
-          //     Message:
-          //       "Name: " + req.body.name + "\r\nEmail: " + req.body.email,
-          //     Subject: "New user sign up!",
-          //     TopicArn: snsTopic
-          //   },
-          //   function(err, data) {
-          //     if (err) {
-          //       res.status(500).end();
-          //       console.log("SNS Error: " + err);
-          //     } else {
-          //       console.log("201 status");
-          //       res.status(201).end();
-          //     }
-          //   }
-          // );
-          returnStatus = 201;
-          console.log("201 baby");
-        }
-
-        if (err.code === "ConditionalCheckFailedException") {
-          console.log("Conditional check failed.  409");
-        }
-
-        res.status(returnStatus);
-        res.json({ success: true }).end();
+      if (email) {
+        response.render("pages/confirmation", { email: email });
+        console.log("success");
+      } else {
+        response.json("Error creating account.");
+        console.log("error");
       }
-    );
+    });
   });
 
   var port = process.env.PORT || 3000;

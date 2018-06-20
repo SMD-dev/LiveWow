@@ -126,6 +126,8 @@
 .learn-more-button {
   position: relative;
   float: right;
+  /* Fix for any shaky animations */
+  backface-visibility: hidden;
 }
 
 .mission {
