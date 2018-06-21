@@ -58,3 +58,14 @@
     padding: none;
   }
 }
+
+/* Changes from here down 6/20 */
+#content-wrapper {
+  background: #fff;
+}
+
+#content section {
+  background: none;
+  box-shadow: none;
+}
+/* End changes 6/20 */
