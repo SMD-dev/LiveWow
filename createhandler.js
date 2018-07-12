@@ -1,14 +1,15 @@
-module.exports = request => {
+module.exports = (request, ddb) => {
   return new Promise(function(resolve, reject) {
     var bcrypt = require("bcrypt");
     var email = request.body.email;
     var password = request.body.password;
     var name = request.body.name;
     var date = request.body.date;
+    console.log(name, email, date, password);
 
     if (validateEmail(email) === false) {
       console.log("Failed email check.");
-      reject("bad email");
+      reject("1001");
     }
 
     bcrypt.hash(password, 10, function(err, hash) {
@@ -32,10 +33,10 @@ module.exports = request => {
                 console.log("Conditional check failed.  409");
               }
 
-              console.log("return status " + returnStatus);
               console.log("DDB Error: " + err);
               resolve(err);
             } else {
+              console.log("Successfully inserted");
               resolve(data);
             }
           }

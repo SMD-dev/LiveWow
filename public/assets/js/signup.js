@@ -53,6 +53,10 @@ function signup(params) {
         "<strong style='color:red'>Sorry, something went wrong.</strong>"
       );
     }
+  }).fail(() => {
+    $("#status").html(
+      "<strong style='color:red'>Sorry, something went wrong.  Please refresh and try again.</strong>"
+    );
   });
 }
 

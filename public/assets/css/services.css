@@ -68,4 +68,37 @@
   background: none;
   box-shadow: none;
 }
+
+.image {
+  max-width: 100%;
+}
+
+.image-left {
+  float: left;
+  padding-right: 10px;
+}
+
+.image-left-container {
+  overflow: auto;
+  display: table-cell;
+  padding-bottom: 2em;
+}
+
+.three-boxes {
+  padding: 1em;
+}
+
+.three-boxes-content {
+  background-color: rgba(214, 214, 214, 0.75);
+  padding: 1em;
+  height: 90vh;
+}
+
+.services-provided {
+  text-align: center;
+}
+
+.three-boxes-content img {
+  width: 100%;
+}
 /* End changes 6/20 */

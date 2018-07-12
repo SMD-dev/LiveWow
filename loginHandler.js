@@ -4,7 +4,7 @@ module.exports = (request, ddb) => {
     // const saltRounds = 10;
     var email = request.body.email;
     var password = request.body.password;
-    var hash;
+    var hash = "";
     console.log(email, password);
 
     request.session.email = email;
@@ -25,26 +25,28 @@ module.exports = (request, ddb) => {
 
           console.log("return status " + returnStatus);
           console.log("DDB Error: " + err);
+          request.session.online = false;
+          reject("1003");
         } else {
           console.log("data ", JSON.stringify(data));
           console.log("password retrieved: ", data.Item.password);
           hash = data.Item.password.S;
         }
+
+        console.log(hash);
+        bcrypt.compare(password, hash, function(err, res) {
+          if (err) {
+            request.session.online = false;
+            console.log("Error comparing database passwords, " + err);
+            resolve(err);
+          } else {
+            console.log("Correct hash? : " + res);
+            console.log(hash);
+            request.session.online = res;
+            resolve(res);
+          }
+        });
       }
     );
-
-    console.log(hash);
-    bcrypt.compare(password, hash, function(err, res) {
-      if (err) {
-        request.session.online = false;
-        console.log("Error comparing database passwords, " + err);
-        resolve(err);
-      } else {
-        console.log("Correct hash? : " + res);
-        console.log(hash);
-        request.session.online = res;
-        resolve(res);
-      }
-    });
   });
 };

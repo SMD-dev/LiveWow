@@ -1,0 +1,16 @@
+.three-boxes-content {
+  background-color: rgba(214, 214, 214, 0.75);
+  padding: 1em;
+  height: 40vh;
+}
+
+.bottom-right {
+  border-radius: 0;
+  float: right;
+}
+
+.two-boxes-content {
+  padding: 1em;
+  text-align: center;
+  border: 2px solid rgba(214, 214, 214, 0.75);
+}

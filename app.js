@@ -36,6 +36,14 @@ if (cluster.isMaster) {
 
   app.set("view engine", "ejs");
   app.use(express.static(path.join(__dirname, "/public")));
+  app.use(
+    session({
+      secret: "this-is-a-secret-token",
+      resave: false,
+      saveUninitialized: true,
+      cookie: { maxAge: 60000 }
+    })
+  );
   app.set("views", __dirname + "/views");
   app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -61,7 +69,7 @@ if (cluster.isMaster) {
     res.render("about");
   });
   app.get("/contact", function(req, res) {
-    res.render("about.ejs#contact");
+    res.render("contact.ejs");
   });
   app.get("/login", function(req, res) {
     res.render("login");
@@ -75,31 +83,34 @@ if (cluster.isMaster) {
   app.get("/webcam", function(req, res) {
     res.render("webcam");
   });
+  app.get("/blog", function(req, res) {
+    res.render("blog");
+  });
 
   app.post("/login", function(req, res) {
     loginHandler(req, ddb).then(result => {
-      email = request.session.email;
-      online = request.session.online;
+      email = req.session.email;
+      online = req.session.online;
 
       if (online) {
-        response.json({ success: "true" });
+        res.json({ success: "true" });
         console.log("success");
       } else {
-        response.json("error");
+        res.json("error");
         console.log("error");
       }
     });
   });
 
   app.post("/signup", function(req, res) {
-    createhandler(request).then(result => {
-      email = request.session.email;
+    createhandler(req, ddb).then(result => {
+      email = req.session.email;
 
       if (email) {
-        response.render("pages/confirmation", { email: email });
+        res.render("pages/confirmation", { email: email });
         console.log("success");
       } else {
-        response.json("Error creating account.");
+        res.json("Error creating account.");
         console.log("error");
       }
     });
