@@ -2,8 +2,8 @@ function validateForm() {
   event.preventDefault();
 
   // age = document.getElementById('age').value;
-  let first = $("#first-name").val();
-  let last = $("#last-name").val();
+  let first = $("#firstname").val();
+  let last = $("#lastname").val();
   let email = $("#email").val();
   let date = $("#date").val();
   let p1 = $("#password1").val();

@@ -3,9 +3,11 @@ module.exports = (request, ddb) => {
     var bcrypt = require("bcrypt");
     var email = request.body.email;
     var password = request.body.password;
-    var name = request.body.name;
+    var first = request.body.first;
+    var last = request.body.last;
     var date = request.body.date;
-    console.log(name, email, date, password);
+    console.log(first, last, email, date, password);
+    console.log(JSON.stringify(request.body));
 
     if (validateEmail(email) === false) {
       console.log("Failed email check.");
@@ -18,12 +20,15 @@ module.exports = (request, ddb) => {
       } else {
         var item = {
           email: { S: email },
-          password: { S: password }
+          first: { S: first },
+          last: { S: last },
+          birthday: { S: date },
+          password: { S: hash }
         };
 
         ddb.putItem(
           {
-            TableName: "users",
+            TableName: "user",
             Item: item,
             Expected: { email: { Exists: false } }
           },
@@ -37,6 +42,7 @@ module.exports = (request, ddb) => {
               resolve(err);
             } else {
               console.log("Successfully inserted");
+              request.session.email = email;
               resolve(data);
             }
           }
