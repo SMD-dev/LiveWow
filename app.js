@@ -107,7 +107,7 @@ if (cluster.isMaster) {
       email = req.session.email;
 
       if (email) {
-        res.render("pages/confirmation", { email: email });
+        res.render("login", { email: email });
         console.log("success");
       } else {
         res.json("Error creating account.");

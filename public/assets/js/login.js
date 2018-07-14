@@ -25,7 +25,9 @@ function validateForm() {
 function login(params) {
   $.post("/login", params, function(result) {
     if (result && result.success) {
-      $("#status").text("Successfully logged in.");
+      $("#status").html(
+        "<strong style='color:green'>Successfully logged in.</strong>"
+      );
       window.location = "/profile";
     } else {
       $("#status").html(
