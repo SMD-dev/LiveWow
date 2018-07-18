@@ -43,7 +43,7 @@ function signup(params) {
       $("#status").html(
         "<strong style='color:green'>Successfully logged in.</strong>"
       );
-      window.location = "/";
+      window.location = "/profile";
     } else if (result.error === "email") {
       $("#status").html(
         "<strong style='color:red'>That email is already taken.</strong>"
