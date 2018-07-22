@@ -12,7 +12,7 @@ if (cluster.isMaster) {
   }
 
   // Listen for terminating workers
-  cluster.on("exit", function(worker) {
+  cluster.on("exit", function (worker) {
     // Replace the terminated workers
     console.log("Worker " + worker.id + " died :(");
     cluster.fork();
@@ -47,47 +47,47 @@ if (cluster.isMaster) {
   app.set("views", __dirname + "/views");
   app.use(bodyParser.urlencoded({ extended: false }));
 
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.render("index");
   });
-  app.get("/services", function(req, res) {
+  app.get("/services", function (req, res) {
     res.render("services");
   });
-  app.get("/guardians", function(req, res) {
+  app.get("/guardians", function (req, res) {
     res.render("guardians");
   });
-  app.get("/wow", function(req, res) {
+  app.get("/wow", function (req, res) {
     res.render("wow");
   });
-  app.get("/store", function(req, res) {
+  app.get("/store", function (req, res) {
     res.render("store");
   });
-  app.get("/careers", function(req, res) {
+  app.get("/careers", function (req, res) {
     res.render("careers");
   });
-  app.get("/about", function(req, res) {
+  app.get("/about", function (req, res) {
     res.render("about");
   });
-  app.get("/contact", function(req, res) {
+  app.get("/contact", function (req, res) {
     res.render("contact.ejs");
   });
-  app.get("/login", function(req, res) {
+  app.get("/login", function (req, res) {
     res.render("login");
   });
-  app.get("/signup", function(req, res) {
+  app.get("/signup", function (req, res) {
     res.render("signup");
   });
-  app.get("/profile", function(req, res) {
+  app.get("/profile", function (req, res) {
     res.render("profile");
   });
-  app.get("/webcam", function(req, res) {
+  app.get("/webcam", function (req, res) {
     res.render("webcam");
   });
-  app.get("/blog", function(req, res) {
+  app.get("/blog", function (req, res) {
     res.render("blog");
   });
 
-  app.post("/login", function(req, res) {
+  app.post("/login", function (req, res) {
     loginHandler(req, ddb).then(result => {
       email = req.session.email;
       online = req.session.online;
@@ -102,7 +102,7 @@ if (cluster.isMaster) {
     });
   });
 
-  app.post("/signup", function(req, res) {
+  app.post("/signup", function (req, res) {
     createhandler(req, ddb).then(result => {
       email = req.session.email;
 
@@ -118,9 +118,25 @@ if (cluster.isMaster) {
     });
   });
 
+
+  app.use((req, res, next) => {
+    res.status(404).json({
+      success: false,
+      error: "Not Found"
+    });
+  });
+
+  app.use((err, req, res, next) => {
+    res.status(500).json({
+      success: false,
+      error: "Server Error"
+    });
+    console.error(err);
+  });
+
   var port = process.env.PORT || 3000;
 
-  var server = app.listen(port, function() {
+  var server = app.listen(port, function () {
     console.log("Server running at http://127.0.0.1:" + port + "/");
   });
 }
